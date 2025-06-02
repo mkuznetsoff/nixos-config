@@ -18,21 +18,21 @@
   
   services.udisks2.enable = true;
 
-  services.xserver.enable = true;
+#  services.xserver.enable = true;
   
-  services.emacs = {
-    enable = true;
-    defaultEditor = true;
-    package = pkgs.emacs30-pgtk;
-  };
+  # services.emacs = {
+  #   enable = true;
+  #   defaultEditor = true;
+  #   package = pkgs.emacs30-pgtk;
+  # };
   
-  environment.systemPackages = with pkgs; [
-    emacsPackages.vterm
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   emacsPackages.vterm
+  # ];
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # services.displayManager.sddm.enable = true;
+  # services.desktopManager.plasma6.enable = true;
 
   hardware.opengl = {
     enable = true;

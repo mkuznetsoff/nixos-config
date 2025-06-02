@@ -7,12 +7,15 @@
     ./yazi.nix
     ./alacritty.nix
     ./git.nix
-    ./kde.nix
+#    ./kde.nix
     ./nixvim/default.nix
     ./pkgs.nix
     ./kitty.nix
     ./gaming.nix
     ./mpd.nix
     ./ncmpcpp.nix
+    ./gtk.nix
+    ./mako.nix
+    ./tofi.nix
   ];
 }

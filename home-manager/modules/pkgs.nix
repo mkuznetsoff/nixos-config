@@ -27,7 +27,7 @@
     polymc
 
     #fonts
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+#    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
     powerline-fonts
     powerline-symbols
     font-awesome

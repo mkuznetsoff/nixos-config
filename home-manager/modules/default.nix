@@ -7,8 +7,9 @@
     ./yazi.nix
     ./alacritty.nix
     ./git.nix
-#    ./kde.nix
+#   ./kde.nix
     ./nixvim/default.nix
+    ./stylix.nix
     ./pkgs.nix
     ./kitty.nix
     ./gaming.nix
@@ -17,5 +18,7 @@
     ./gtk.nix
     ./mako.nix
     ./tofi.nix
+    ./hyprland.nix
+    ./waybar.nix
   ];
 }

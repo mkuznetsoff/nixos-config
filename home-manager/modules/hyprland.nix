@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ...}: {
+{ pkgs, config, ... }: {
 
   home.packages = with pkgs; [
     swww
@@ -8,17 +8,8 @@
     hyprshot
     wlsunset
     playerctl
+    mako
   ];
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
-    ];
-    configPackages = with pkgs; [
-      xdg-desktop-portal-hyprland
-    ];
-  };
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -29,6 +20,7 @@
         "--all"
       ]; # https://wiki.hyprland.org/Nix/Hyprland-on-Home-Manager/#programs-dont-work-in-systemd-services-but-do-on-the-terminal
     };
+    
     settings = {
 
       "$mainMod" = "SUPER";
@@ -94,10 +86,13 @@
       };
 
       general = {
+        
         gaps_in = 0;
         gaps_out = 0;
         border_size = 2;
         layout = "dwindle";
+        
+      };
 
        decoration = {
          #rounding = 5;

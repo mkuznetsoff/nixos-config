@@ -46,7 +46,7 @@
         };
         modules = [
           ./nixos/configuration.nix
-#          inputs.stylix.nixosModules.stylix
+          inputs.stylix.nixosModules.stylix
           inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t460s
         ];
       };

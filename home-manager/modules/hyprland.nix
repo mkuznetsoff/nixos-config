@@ -11,6 +11,17 @@
     mako
   ];
 
+    xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+    ];
+    configPackages = with pkgs; [
+      xdg-desktop-portal-hyprland
+    ];
+  };
+
+
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;

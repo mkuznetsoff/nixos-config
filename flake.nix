@@ -19,7 +19,7 @@
     };
     polymc.url = "github:PolyMC/PolyMC";
     nixgl.url = "github:nix-community/nixGL";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:danth/stylix/release-25.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";

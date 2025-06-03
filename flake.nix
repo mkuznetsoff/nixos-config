@@ -69,8 +69,9 @@
         };
         modules = [
           ./home-manager/home.nix
-           inputs.plasma-manager.homeManagerModules.plasma-manager
+          inputs.plasma-manager.homeManagerModules.plasma-manager
           inputs.nixvim.homeManagerModules.nixvim
+          inputs.stylix.homeModules.stylix
         ];
       };
     };

@@ -38,8 +38,8 @@
     fonts = {
 
       monospace = {
-        package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
-        name = "JetBrainsMono Nerd Font Mono";
+        package = pkgs.nerd-fonts.iosevka;
+        name = "Iosevka Medium Nerd Font Mono";
       };
       
       emoji = {

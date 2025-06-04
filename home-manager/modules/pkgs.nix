@@ -24,7 +24,6 @@
     qbittorrent
     unstable.telegram-desktop
     calibre
-    polymc
 
     #fonts
 #    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })

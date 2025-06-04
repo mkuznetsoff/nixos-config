@@ -11,6 +11,6 @@
     ./cups.nix
     ./nixd.nix
     ./stylix/stylix.nix
-    ./hyprland.nix
+#    ./hyprland.nix
   ];
 }

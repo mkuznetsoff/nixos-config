@@ -27,8 +27,6 @@
 
     image = ./dsotm.png;
 
-
-
     cursor = {
       package = pkgs.apple-cursor;
       name = "macOS";

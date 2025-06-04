@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     swww
     brightnessctl
-    xwaylandvideobridge
+    kdePackages.xwaylandvideobridge
     wl-clipboard
     hyprshot
     wlsunset
@@ -45,28 +45,28 @@
         "COLORTERM,truecolor"
         "XDG_CURRENT_DESKTOP,Hyprland"
         "MOZ_ENABLE_WAYLAND,1"
-        "ANKI_WAYLAND,1"
-        "DISABLE_QT5_COMPAT,0"
-        "NIXOS_OZONE_WL,1"
-        "XDG_SESSION_TYPE,wayland"
-        "XDG_SESSION_DESKTOP,Hyprland"
-        "QT_AUTO_SCREEN_SCALE_FACTOR,1.2"
-        "QT_QPA_PLATFORM=wayland,xcb"
-        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-        "ELECTRON_OZONE_PLATFORM_HINT,auto"
-        "DISABLE_QT5_COMPAT,0"
-        "DIRENV_LOG_FORMAT,"
-        "WLR_DRM_NO_ATOMIC,1"
-        "WLR_BACKEND,vulkan"
-        "WLR_RENDERER,vulkan"
-        "WLR_NO_HARDWARE_CURSORS,1"
-        "SDL_VIDEODRIVER,wayland"
-        "CLUTTER_BACKEND,wayland"
+        # "ANKI_WAYLAND,1"
+        # "DISABLE_QT5_COMPAT,0"
+        # "NIXOS_OZONE_WL,1"
+        # "XDG_SESSION_TYPE,wayland"
+        # "XDG_SESSION_DESKTOP,Hyprland"
+        # "QT_AUTO_SCREEN_SCALE_FACTOR,1.2"
+        # "QT_QPA_PLATFORM=wayland,xcb"
+        # "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        # "ELECTRON_OZONE_PLATFORM_HINT,auto"
+        # "DISABLE_QT5_COMPAT,0"
+        # "DIRENV_LOG_FORMAT,"
+        # "WLR_DRM_NO_ATOMIC,1"
+        # "WLR_BACKEND,vulkan"
+        # "WLR_RENDERER,vulkan"
+        # "WLR_NO_HARDWARE_CURSORS,1"
+        # "SDL_VIDEODRIVER,wayland"
+        # "CLUTTER_BACKEND,wayland"
       ];
 
       exec-once = [
         "swww init"
-        "swww img ${config.stylix.image}"
+        #"swww img ${config.stylix.image}"
         "mako"
         "wlsunset -l 56.95 -L 53.206 -t 5000 &"
       ];
@@ -155,10 +155,10 @@
         disable_hyprland_logo = true;
       };
 
-      windowrule = [
-        "float, ^(imv)$"
-        "float, ^(mpv)$"
-      ];
+      # windowrule = [
+      #   "float, ^(imv)$"
+      #   "float, ^(mpv)$"
+      # ];
       workspace = [
         "w[tv1], gapsout:0, gapsin:0"
         "f[1], gapsout:0, gapsin:0"
@@ -247,7 +247,7 @@
       	# Screenshot a monitor
 	      " , PRINT, exec, hyprshot -m output "
       	# Screenshot a region
-      	" $shiftMod, PRINT, exec, hyprshot -m region "
+      	" $mainMod SHIFT, PRINT, exec, hyprshot -m region "
 
 
 

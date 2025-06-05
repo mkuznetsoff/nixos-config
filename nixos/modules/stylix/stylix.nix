@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   stylix = {
 
@@ -24,45 +24,6 @@
       base0E = "#cba6f7"; # mauve
       base0F = "#f2cdcd"; # flamingo
     };
-
-    image = ./dsotm.png;
-
-    cursor = {
-      package = pkgs.apple-cursor;
-      name = "macOS";
-      size = 32;
-    };
-
-    fonts = {
-
-      monospace = {
-        package = pkgs.nerd-fonts.iosevka;
-        name = "Iosevka Medium Nerd Font Mono";
-      };
-      
-      emoji = {
-        package = pkgs.noto-fonts-emoji;
-        name = "Noto Color Emoji";
-      };
-      
-      sansSerif = {
-        package = pkgs.noto-fonts;
-        name = "Noto Sans";
-      };
-      
-      serif = {
-        package = pkgs.newcomputermodern;
-        name = "Computer Modern";
-      };
-      
-      sizes = {
-        terminal = 12;
-        applications = 11;
-        popups = 12;
-      };
-    };
-
-    #    opacity.terminal = 0.8;
 
     autoEnable = true;
   };

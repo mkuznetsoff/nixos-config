@@ -45,23 +45,23 @@
         "COLORTERM,truecolor"
         "XDG_CURRENT_DESKTOP,Hyprland"
         "MOZ_ENABLE_WAYLAND,1"
-        # "ANKI_WAYLAND,1"
-        # "DISABLE_QT5_COMPAT,0"
-        # "NIXOS_OZONE_WL,1"
-        # "XDG_SESSION_TYPE,wayland"
-        # "XDG_SESSION_DESKTOP,Hyprland"
-        # "QT_AUTO_SCREEN_SCALE_FACTOR,1.2"
-        # "QT_QPA_PLATFORM=wayland,xcb"
-        # "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-        # "ELECTRON_OZONE_PLATFORM_HINT,auto"
-        # "DISABLE_QT5_COMPAT,0"
-        # "DIRENV_LOG_FORMAT,"
-        # "WLR_DRM_NO_ATOMIC,1"
-        # "WLR_BACKEND,vulkan"
-        # "WLR_RENDERER,vulkan"
-        # "WLR_NO_HARDWARE_CURSORS,1"
-        # "SDL_VIDEODRIVER,wayland"
-        # "CLUTTER_BACKEND,wayland"
+        "ANKI_WAYLAND,1"
+        "DISABLE_QT5_COMPAT,0"
+        "NIXOS_OZONE_WL,1"
+        "XDG_SESSION_TYPE,wayland"
+        "XDG_SESSION_DESKTOP,Hyprland"
+        "QT_AUTO_SCREEN_SCALE_FACTOR,1.2"
+        "QT_QPA_PLATFORM=wayland,xcb"
+        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        "ELECTRON_OZONE_PLATFORM_HINT,auto"
+        "DISABLE_QT5_COMPAT,0"
+        "DIRENV_LOG_FORMAT,"
+        "WLR_DRM_NO_ATOMIC,1"
+        "WLR_BACKEND,vulkan"
+        "WLR_RENDERER,vulkan"
+        "WLR_NO_HARDWARE_CURSORS,1"
+        "SDL_VIDEODRIVER,wayland"
+        "CLUTTER_BACKEND,wayland"
       ];
 
       exec-once = [
@@ -76,8 +76,10 @@
       input = {
 
         kb_layout = "us,ru";
-        kb_variant = "lang";
+        kb_variant = "";
+        kb_model = "";
         kb_options = "grp:caps_toggle";
+        kb_rules = "";
 
         follow_mouse = 1;
 
@@ -85,8 +87,8 @@
            natural_scroll = false;
         };
 
-        repeat_rate = 25;
-        repeat_delay = 300;
+        repeat_rate = 30;
+        repeat_delay = 250;
 
         sensitivity = -0.2; # -1.0 - 1.0, 0 means no modification.
 

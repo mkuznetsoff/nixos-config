@@ -175,10 +175,10 @@ let
 in
 {
   programs.waybar = {
-    enable = false;
-    package = pkgs.waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    });
+    enable = true;
+    # package = pkgs.waybar.overrideAttrs (oldAttrs: {
+    #   mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    # });
     style = css;
     settings = {
       mainBar = mainWaybarConfig;

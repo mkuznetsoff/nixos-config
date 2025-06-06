@@ -23,6 +23,11 @@
     stylix.url = "github:danth/stylix/release-25.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    anyrun.url = "github:fufexan/anyrun/launch-prefix";
   };
 
   outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, nixgl, ... } @ inputs:
@@ -46,7 +51,7 @@
         };
         modules = [
           ./nixos/configuration.nix
-          inputs.stylix.nixosModules.stylix
+         # inputs.stylix.nixosModules.stylix
           inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t460s
         ];
       };

@@ -49,17 +49,17 @@
       
       sansSerif = {
         package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro;
-        name = "SFProDisplay";
+        name = "SF Pro Display";
       };
       
       serif = {
         package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro;
-        name = "SFProDisplay";
+        name = "SF Pro Display";
       };
       
       sizes = {
         terminal = 13;
-        applications = 9;
+        applications = 10;
         popups = 10;
       };
     };

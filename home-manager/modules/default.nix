@@ -15,11 +15,12 @@
     ./gaming.nix
     ./mpd.nix
     ./ncmpcpp.nix
+    ./mpdris.nix
     ./gtk.nix
     ./mako.nix
     ./tofi.nix
     ./hyprland.nix
-    ./waybar.nix
     ./hyprpanel.nix
+    ./anyrun.nix
   ];
 }

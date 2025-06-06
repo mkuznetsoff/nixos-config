@@ -2,13 +2,19 @@
 
   home.packages = with pkgs; [
     swww
-    brightnessctl
     kdePackages.xwaylandvideobridge
     wl-clipboard
-    hyprshot
     wlsunset
+    hyprshot
+    hyprpicker
+    hyprland-qt-support
+    hyprpolkitagent
+    hyprsunset
     playerctl
     mako
+    pamixer
+    playerctl
+    mpdris2
   ];
 
     xdg.portal = {
@@ -67,8 +73,9 @@
       exec-once = [
         "swww init"
         "swww img ${config.stylix.image}"
-        "mako"
-        "wlsunset -l 56.95 -L 53.206 -t 5000 &"
+        "hyprpanel"
+        "hyprsunset"
+        "wlsunset -l 56.95 -L 53.206 -t 5000"
       ];
 
 

@@ -9,7 +9,7 @@
     ./git.nix
 #   ./kde.nix
     ./nixvim/default.nix
-    ./stylix.nix
+    ./stylix/stylix.nix
     ./pkgs.nix
     ./kitty.nix
     ./gaming.nix
@@ -20,5 +20,6 @@
     ./tofi.nix
     ./hyprland.nix
     ./waybar.nix
+    ./hyprpanel.nix
   ];
 }

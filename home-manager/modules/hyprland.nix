@@ -36,7 +36,7 @@
 
       "$mainMod" = "SUPER";
 
-      monitor = ",preferred,auto,1.2";
+      monitor = ",preferred,auto,1.25";
 
       env = [
 
@@ -50,7 +50,7 @@
         "NIXOS_OZONE_WL,1"
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
-        "QT_AUTO_SCREEN_SCALE_FACTOR,1.2"
+        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
         "QT_QPA_PLATFORM=wayland,xcb"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
@@ -66,7 +66,7 @@
 
       exec-once = [
         "swww init"
-        #"swww img ${config.stylix.image}"
+        "swww img ${config.stylix.image}"
         "mako"
         "wlsunset -l 56.95 -L 53.206 -t 5000 &"
       ];

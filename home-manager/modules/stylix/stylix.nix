@@ -1,8 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   stylix = {
 
     enable = true;
+    targets.waybar.enable = false;
+    targets.kde.enable = false;
 
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 
@@ -37,7 +39,7 @@
 
       monospace = {
         package = pkgs.nerd-fonts.iosevka;
-        name = "Iosevka Medium Nerd Font Mono";
+        name = "Iosevka NF Medium";
       };
       
       emoji = {
@@ -46,19 +48,19 @@
       };
       
       sansSerif = {
-        package = pkgs.noto-fonts;
-        name = "Noto Sans";
+        package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro;
+        name = "SFProDisplay";
       };
       
       serif = {
-        package = pkgs.newcomputermodern;
-        name = "Computer Modern";
+        package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro;
+        name = "SFProDisplay";
       };
       
       sizes = {
-        terminal = 12;
-        applications = 11;
-        popups = 12;
+        terminal = 13;
+        applications = 9;
+        popups = 10;
       };
     };
 

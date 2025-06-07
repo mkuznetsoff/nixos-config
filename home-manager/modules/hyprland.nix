@@ -117,7 +117,7 @@
         gaps_out = 20;
         border_size = 3;
         layout = "dwindle";
-        "col.inactive_border" = lib.mkForce "rgb(" + config.lib.stylix.colors.base00 + ")";
+        "col.inactive_border" = lib.mkForce "rgba(${config.lib.stylix.colors.base00}ff)";
       };
 
        decoration = {

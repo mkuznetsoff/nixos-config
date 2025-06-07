@@ -21,6 +21,7 @@
     ./tofi.nix
     ./hyprland.nix
     ./hyprpanel.nix
-    ./anyrun.nix
+#    ./anyrun.nix
+    ./wofi.nix
   ];
 }

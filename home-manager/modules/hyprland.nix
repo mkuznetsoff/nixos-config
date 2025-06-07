@@ -1,6 +1,10 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, lib, ... }: {
 
   home.packages = with pkgs; [
+    qt5.qtwayland
+    qt6.qtwayland
+    libsForQt5.qt5ct
+    qt6ct
     swww
     kdePackages.xwaylandvideobridge
     wl-clipboard
@@ -9,12 +13,13 @@
     hyprpicker
     hyprland-qt-support
     hyprpolkitagent
-    hyprsunset
     playerctl
     mako
     pamixer
     playerctl
     mpdris2
+    cliphist
+    brightnessctl
   ];
 
     xdg.portal = {
@@ -74,8 +79,9 @@
         "swww init"
         "swww img ${config.stylix.image}"
         "hyprpanel"
-        "hyprsunset"
         "wlsunset -l 56.95 -L 53.206 -t 5000"
+        "wl-paste --type text --watch cliphist store"
+        "wl-paste --type image --watch cliphist store"
       ];
 
 
@@ -106,34 +112,63 @@
       };
 
       general = {
-        
-        gaps_in = 0;
-        gaps_out = 0;
-        border_size = 2;
+        resize_on_border = true;
+        gaps_in = 10;
+        gaps_out = 20;
+        border_size = 3;
         layout = "dwindle";
-        
+        "col.inactive_border" = lib.mkForce "rgb(" + config.lib.stylix.colors.base00 + ")";
       };
 
        decoration = {
-         #rounding = 5;
-      #   drop_shadow = true;
-      #   shadow_range = 30;
-      #   shadow_render_power = 3;
+         rounding = 20;
+         drop_shadow = true;
+         shadow_range = 30;
+         shadow_render_power = 3;
+         shadow = {
+           enabled = true;
+           range = 20;
+           render_power = 3;
+         };
+          # blur = {
+          #   enabled = true;
+          #   size = 18;
+          # };
        };
 
-      animations = {
-        enabled = false;
+        animations = {
+          enabled = true;
+          bezier = [
+        "linear, 0, 0, 1, 1"
+        "md3_standard, 0.2, 0, 0, 1"
+        "md3_decel, 0.05, 0.7, 0.1, 1"
+        "md3_accel, 0.3, 0, 0.8, 0.15"
+        "overshot, 0.05, 0.9, 0.1, 1.1"
+        "crazyshot, 0.1, 1.5, 0.76, 0.92"
+        "hyprnostretch, 0.05, 0.9, 0.1, 1.0"
+        "menu_decel, 0.1, 1, 0, 1"
+        "menu_accel, 0.38, 0.04, 1, 0.07"
+        "easeInOutCirc, 0.85, 0, 0.15, 1"
+        "easeOutCirc, 0, 0.55, 0.45, 1"
+        "easeOutExpo, 0.16, 1, 0.3, 1"
+        "softAcDecel, 0.26, 0.26, 0.15, 1"
+        "md2, 0.4, 0, 0.2, 1"
+      ];
 
-        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
         animation = [
-          "windows,     1, 7,  myBezier"
-          "windowsOut,  1, 7,  default, popin 80%"
-          "border,      1, 10, default"
-          "borderangle, 1, 8,  default"
-          "fade,        1, 7,  default"
-          "workspaces,  1, 6,  default"
-        ];
-      };
+        "windows, 1, 1.5, md3_decel, popin 60%"
+        "windowsIn, 1, 1.5, md3_decel, popin 60%"
+        "windowsOut, 1, 1.5, md3_accel, popin 60%"
+        "border, 1, 3, default"
+        "fade, 1, 1.5, md3_decel"
+        "layersIn, 1, 1.5, menu_decel, slide"
+        "layersOut, 1, 1.5, menu_accel"
+        "fadeLayersIn, 1, 1.5, menu_decel"
+        "fadeLayersOut, 1, 1.5, menu_accel"
+        "workspaces, 1, 1.5, menu_decel, slide"
+        "specialWorkspace, 1, 1.5, md3_decel, slidevert"
+      ];
+    };
 
       dwindle = {
         pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
@@ -184,7 +219,7 @@
         "$mainMod, Q,      killactive,"
         "$mainMod  Shift,  Q, exit,"
         "$mainMod, F,      togglefloating,"
-        "$mainMod, D,      exec, tofi-drun"
+        "$mainMod, D,      exec, wofi --show=drun"
         "$mainMod, P,      pseudo, # dwindle"
         "$mainMod, I,      togglesplit, # dwindle"
 
@@ -258,7 +293,8 @@
       	# Screenshot a region
       	" $mainMod SHIFT, PRINT, exec, hyprshot -m region "
 
-
+        # Clipboard history manager with cliphist
+      	" $mainMod, V, exec, cliphist list | wofi -S dmenu | cliphist decode | wl-copy"
 
       ];
 

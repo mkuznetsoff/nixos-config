@@ -7,6 +7,7 @@ networking = {
     wifi.backend = "iwd";
     wifi.powersave = false;
   };
+  enableIPv6 = false;
 };
   
 }

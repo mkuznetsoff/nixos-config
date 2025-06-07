@@ -114,7 +114,7 @@
       general = {
         resize_on_border = true;
         gaps_in = 10;
-        gaps_out = 20;
+        gaps_out = 10;
         border_size = 3;
         layout = "dwindle";
         "col.inactive_border" = lib.mkForce "rgba(${config.lib.stylix.colors.base00}ff)";
@@ -122,9 +122,6 @@
 
        decoration = {
          rounding = 20;
-         drop_shadow = true;
-         shadow_range = 30;
-         shadow_render_power = 3;
          shadow = {
            enabled = true;
            range = 20;
@@ -156,17 +153,17 @@
       ];
 
         animation = [
-        "windows, 1, 1.5, md3_decel, popin 60%"
-        "windowsIn, 1, 1.5, md3_decel, popin 60%"
-        "windowsOut, 1, 1.5, md3_accel, popin 60%"
+        "windows, 1, 2.5, md3_decel, popin 60%"
+        "windowsIn, 1, 2.5, md3_decel, popin 60%"
+        "windowsOut, 1, 2.5, md3_accel, popin 60%"
         "border, 1, 3, default"
-        "fade, 1, 1.5, md3_decel"
-        "layersIn, 1, 1.5, menu_decel, slide"
-        "layersOut, 1, 1.5, menu_accel"
-        "fadeLayersIn, 1, 1.5, menu_decel"
-        "fadeLayersOut, 1, 1.5, menu_accel"
-        "workspaces, 1, 1.5, menu_decel, slide"
-        "specialWorkspace, 1, 1.5, md3_decel, slidevert"
+        "fade, 1, 2.5, md3_decel"
+        "layersIn, 1, 2.5, menu_decel, slide"
+        "layersOut, 1, 2.5, menu_accel"
+        "fadeLayersIn, 1, 2.5, menu_decel"
+        "fadeLayersOut, 1, 2.5, menu_accel"
+        "workspaces, 1, 2.5, menu_decel, slide"
+        "specialWorkspace, 1, 2.5, md3_decel, slidevert"
       ];
     };
 

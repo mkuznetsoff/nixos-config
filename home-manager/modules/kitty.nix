@@ -1,10 +1,8 @@
 { ... }: {
   programs.kitty = {
     enable = true;
-    # themeFile = "Catppuccin-Mocha";
-    # font = {
-#      name = "Iosevka Medium";
-#      size = 13;
-    # }; 
+    settings = {
+      window_padding_width = 10;
+    };
   };
 }

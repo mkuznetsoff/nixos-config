@@ -1,9 +1,14 @@
-{ pkgs, ...}: {
+{ pkgs, ... }:
 
+{
   gtk = {
     enable = true;
-    iconTheme.package = pkgs.gruvbox-plus-icons;
-    iconTheme.name = "Gruvbox-Plus-Dark";
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "pink";
+      };
+    };
   };
-
 }

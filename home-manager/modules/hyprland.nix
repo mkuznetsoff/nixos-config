@@ -20,6 +20,7 @@
     mpdris2
     cliphist
     brightnessctl
+    gpu-screen-recorder
   ];
 
     xdg.portal = {
@@ -51,7 +52,7 @@
 
       env = [
 
-        "XCURSOR_SIZE,32"
+        "XCURSOR_SIZE,24"
         "XCURSOR_THEME,macOS"
         "COLORTERM,truecolor"
         "XDG_CURRENT_DESKTOP,Hyprland"
@@ -80,8 +81,7 @@
         "swww img ${config.stylix.image}"
         "hyprpanel"
         "wlsunset -l 56.95 -L 53.206 -t 5000"
-        "wl-paste --type text --watch cliphist store"
-        "wl-paste --type image --watch cliphist store"
+        "wl-paste --watch cliphist store"
       ];
 
 
@@ -113,11 +113,11 @@
 
       general = {
         resize_on_border = true;
-        gaps_in = 10;
-        gaps_out = 10;
-        border_size = 3;
+        gaps_in = 5;
+        gaps_out = 5;
+        border_size = 2;
         layout = "dwindle";
-        "col.inactive_border" = lib.mkForce "rgba(${config.lib.stylix.colors.base00}ff)";
+         "col.active_border" = lib.mkForce "rgba(${config.lib.stylix.colors.base0F}ff)";
       };
 
        decoration = {
@@ -212,7 +212,7 @@
       ];
 
       bind = [
-        "$mainMod, Return, exec, alacritty"
+        "$mainMod, Return, exec, kitty"
         "$mainMod, Q,      killactive,"
         "$mainMod  Shift,  Q, exit,"
         "$mainMod, F,      togglefloating,"
@@ -284,14 +284,14 @@
 
 	
       	# Screenshot a window
-      	" $mainMod, PRINT, exec, hyprshot -m window "
+      	" $mainMod SHIFT, PRINT, exec, hyprshot -z -o ~/Pictures/Screenshots/ -m window "
       	# Screenshot a monitor
-	      " , PRINT, exec, hyprshot -m output "
+	      " $mainMod, PRINT, exec, hyprshot -z -o ~/Pictures/Screenshots/ -m output "
       	# Screenshot a region
-      	" $mainMod SHIFT, PRINT, exec, hyprshot -m region "
+      	" , PRINT, exec, hyprshot -z -o ~/Pictures/Screenshots/ -m region "
 
         # Clipboard history manager with cliphist
-      	" $mainMod, V, exec, cliphist list | wofi -S dmenu | cliphist decode | wl-copy"
+      	'' $mainMod, V, exec, cliphist list | wofi --dmenu --pre-display-cmd "echo '%s' | cut -f 2" | cliphist decode | wl-copy ''
 
       ];
 

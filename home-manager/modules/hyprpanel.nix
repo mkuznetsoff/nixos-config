@@ -14,7 +14,7 @@
             "left" = [ "dashboard" "workspaces" "windowtitle" ];
             "middle" = [ "media" ];
             "right" = [
-              "kbLayout"
+              "kbinput"
               "volume"
               "bluetooth"
               "battery"
@@ -28,13 +28,16 @@
         theme.font.name = "SF Pro Display";
         theme.font.size = "12px";
         theme.bar.transparent = true;
-      # theme.bar.buttons.monochrome = true;
-      # theme.bar.menus.monochrome = true;
 
         bar.launcher.icon = "";
-        bar.clock.format = "%a %b %d  %I:%M %p";
-        menus.dashboard.powermenu.confirmation = false;
+        bar.clock.format = "%I:%M %p";
+        # bar.workspaces.numbered_active_indicator = "color";
+        # bar.workspaces.show_icons = true;
+        bar.bluetooth.label = false;
+        bar.battery.hideLabelWhenFull = true;
 
+        
+        menus.dashboard.powermenu.confirmation = false;
         menus.dashboard.shortcuts.left.shortcut1.icon = "󰖔";
         menus.dashboard.shortcuts.left.shortcut1.command = "night-shift";
         menus.dashboard.shortcuts.left.shortcut1.tooltip = "Night-shift";
@@ -47,9 +50,22 @@
         menus.dashboard.shortcuts.right.shortcut1.tooltip = "Color Picker";
         menus.dashboard.shortcuts.right.shortcut2.icon = "󰄀";
         menus.dashboard.shortcuts.right.shortcut2.command = "screenshot region swappy";
-        menus.dashboard.shortcuts.right.shortcut2.tooltip = "Screenshot";
+        menus.dashboard.shortcuts.right.shortcut2.tooltip = "Recording";
+        menus.dashboard.shortcuts.right.shortcut3.icon = "";
+        menus.dashboard.shortcuts.right.shortcut3.command = ''
+          gpu-screen-recorder -w screen -f 60 -a default_output \
+          -o "$HOME/Videos/video_$(date +%Y-%m-%d_%H-%M-%S).mp4"
+        '';
+        menus.dashboard.shortcuts.right.shortcut3.tooltip = "Recording";
+        menus.dashboard.stats.enabled = false;
+        menus.dashboard.directories.enabled = false;
+        menus.clock.weather.enabled = false;
+
 
         menus.power.lowBatteryNotification = true;
+
+        theme.bar.menus.menu.notifications.scrollbar.width = "50px";
+        scalingPriority = "hyprland";
       };
     };
   };

@@ -24,6 +24,7 @@
     qbittorrent
     unstable.telegram-desktop
     calibre
+    unstable.spotify
 
     #fonts
 #    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })

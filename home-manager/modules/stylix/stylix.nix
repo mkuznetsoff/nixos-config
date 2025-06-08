@@ -32,7 +32,7 @@
     cursor = {
       package = pkgs.apple-cursor;
       name = "macOS";
-      size = 32;
+      size = 24;
     };
 
     fonts = {
@@ -58,7 +58,7 @@
       };
       
       sizes = {
-        terminal = 13;
+        terminal = 12;
         applications = 10;
         popups = 10;
       };

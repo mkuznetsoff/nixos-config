@@ -5,7 +5,7 @@
     ./firefox.nix
     ./mpv.nix
     ./yazi.nix
-    ./alacritty.nix
+#    ./alacritty.nix
     ./git.nix
 #   ./kde.nix
     ./nixvim/default.nix
@@ -18,10 +18,11 @@
     ./mpdris.nix
     ./gtk.nix
     ./mako.nix
-    ./tofi.nix
+    #./tofi.nix
     ./hyprland.nix
     ./hyprpanel.nix
 #    ./anyrun.nix
     ./wofi.nix
+    ./foot.nix
   ];
 }

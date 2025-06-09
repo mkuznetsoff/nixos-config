@@ -52,7 +52,7 @@
 
       env = [
 
-        "XCURSOR_SIZE,24"
+        "XCURSOR_SIZE,28"
         "XCURSOR_THEME,macOS"
         "COLORTERM,truecolor"
         "XDG_CURRENT_DESKTOP,Hyprland"
@@ -117,7 +117,7 @@
         gaps_out = 5;
         border_size = 2;
         layout = "dwindle";
-         "col.active_border" = lib.mkForce "rgba(${config.lib.stylix.colors.base0F}ff)";
+         "col.active_border" = lib.mkForce "rgba(${config.lib.stylix.colors.base0E}ff)";
       };
 
        decoration = {

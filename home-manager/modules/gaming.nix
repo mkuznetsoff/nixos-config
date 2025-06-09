@@ -9,7 +9,7 @@
   # };
 
   
-#  nixpkgs.overlays = [ inputs.polymc.overlay ];
+ nixpkgs.overlays = [ inputs.polymc.overlay ];
   
   nixpkgs.config.allowUnfree = true;
 
@@ -18,11 +18,11 @@
    # };
   
   home.packages = with pkgs; [
-#    polymc
+   polymc
 #    lutris
 #    steam
-    gamemode
-#    dxvk
+   gamemode
+   dxvk
 #    gamescope
    # protontricks
    # xboxdrv

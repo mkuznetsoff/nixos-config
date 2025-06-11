@@ -11,7 +11,7 @@
      	};
       main = {
         term = "xterm-256color";
-        pad = 8;
+        pad = "8x8";
       };
    	};
     server = {

@@ -212,7 +212,7 @@
       ];
 
       bind = [
-        "$mainMod, Return, exec, kitty"
+        "$mainMod, Return, exec, footclient"
         "$mainMod, Q,      killactive,"
         "$mainMod  Shift,  Q, exit,"
         "$mainMod, F,      togglefloating,"

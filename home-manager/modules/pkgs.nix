@@ -25,6 +25,7 @@
     unstable.telegram-desktop
     calibre
     unstable.spotify
+    zathura
 
     #fonts
 #    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })

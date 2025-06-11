@@ -5,6 +5,7 @@
     enable = true;
     targets.waybar.enable = false;
     targets.kde.enable = false;
+    targets.yazi.enable = false;
 
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 

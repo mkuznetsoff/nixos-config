@@ -8,11 +8,6 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
     nixvim = {
     	url = "github:nix-community/nixvim/nixos-25.05";
 	    inputs.nixpkgs.follows = "nixpkgs";
@@ -28,6 +23,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     anyrun.url = "github:fufexan/anyrun/launch-prefix";
+    nix-photogimp = {
+      url = "github:Libadoxon/nix-photo-gimp";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, nixgl, ... } @ inputs:
@@ -74,7 +73,6 @@
         };
         modules = [
           ./home-manager/home.nix
-          inputs.plasma-manager.homeManagerModules.plasma-manager
           inputs.nixvim.homeManagerModules.nixvim
           inputs.stylix.homeManagerModules.stylix
         ];

@@ -52,7 +52,7 @@
 
       env = [
 
-        "XCURSOR_SIZE,28"
+        "XCURSOR_SIZE,24"
         "XCURSOR_THEME,macOS"
         "COLORTERM,truecolor"
         "XDG_CURRENT_DESKTOP,Hyprland"

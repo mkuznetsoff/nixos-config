@@ -1,4 +1,4 @@
-{ pkgs, unstable, ... }: {
+{ pkgs, unstable, inputs, ... }: {
   
   nixpkgs.config.allowUnfree = true;
 
@@ -19,7 +19,7 @@
     #apps
     anydesk
     audacity
-    gimp
+    inputs.nix-photogimp.packages.${pkgs.system}.default
     libreoffice-qt6
     qbittorrent
     unstable.telegram-desktop

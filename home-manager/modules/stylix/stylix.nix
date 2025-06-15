@@ -33,7 +33,7 @@
     cursor = {
       package = pkgs.apple-cursor;
       name = "macOS";
-      size = 28;
+      size = 24;
     };
 
     fonts = {

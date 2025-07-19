@@ -19,13 +19,9 @@
   
   home.packages = with pkgs; [
    polymc
-#    lutris
-#    steam
    gamemode
    dxvk
-#    gamescope
-   # protontricks
-   # xboxdrv
+   steam-run
    # protonup-ng
   ];
 }

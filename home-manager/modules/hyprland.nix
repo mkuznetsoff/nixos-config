@@ -48,12 +48,12 @@
 
       "$mainMod" = "SUPER";
 
-      monitor = ",preferred,auto,1.25";
+      monitor = ",preferred,auto,1";
 
       env = [
 
-        "XCURSOR_SIZE,24"
-        "XCURSOR_THEME,macOS"
+        # "XCURSOR_SIZE,24"
+        # "XCURSOR_THEME,macOS"
         "COLORTERM,truecolor"
         "XDG_CURRENT_DESKTOP,Hyprland"
         "MOZ_ENABLE_WAYLAND,1"
@@ -219,6 +219,7 @@
         "$mainMod, D,      exec, wofi --show=drun"
         "$mainMod, P,      pseudo, # dwindle"
         "$mainMod, I,      togglesplit, # dwindle"
+        "$mainMod, P,      pin, # dwindle"
 
         # Move focus with mainMod + VI keys
         "$mainMod, h, movefocus, l"

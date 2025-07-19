@@ -5,7 +5,6 @@
     settings = {
       ncmpcpp_directory = "~/.config/ncmpcpp";
       lyrics_directory = "~/.local/share/lyrics";
-      mpd_music_dir = "~/Music";
       message_delay_time = "1";
       song_list_format = "{$4%a - }{%t}|{$8%f$9}$R{$3(%l)$9}";
       song_status_format = "$b{{$8%t}} $3by {$4%a{ $3in $7%b{ (%y)}} $3}|{$8%f}";

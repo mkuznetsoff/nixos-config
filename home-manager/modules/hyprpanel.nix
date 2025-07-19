@@ -26,7 +26,7 @@
           };
         };
         theme.font.name = "SF Pro Display";
-        theme.font.size = "12px";
+        theme.font.size = "14px";
         theme.bar.transparent = true;
 
         bar.launcher.icon = "";

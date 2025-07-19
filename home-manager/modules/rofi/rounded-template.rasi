@@ -2,10 +2,10 @@
 /* Author: Newman Sanchez (https://github.com/newmanls) */
 
 * {
-    font:   "Roboto 12";
+    // font:   "Roboto 12";
 
     background-color:   transparent;
-    text-color:         @fg0;
+    // text-color:         @fg0;
 
     margin:     0px;
     padding:    0px;
@@ -18,7 +18,7 @@ window {
     width:          480;
     border-radius:  24px;
 
-    background-color:   @bg0;
+    // background-color:   @bg0;
 }
 
 mainbox {
@@ -26,8 +26,8 @@ mainbox {
 }
 
 inputbar {
-    background-color:   @bg1;
-    border-color:       @bg3;
+    // background-color:   @bg1;
+    // border-color:       @bg3;
 
     border:         2px;
     border-radius:  16px;
@@ -37,20 +37,20 @@ inputbar {
     children:   [ prompt, entry ];
 }
 
-prompt {
-    text-color: @fg2;
-}
+// prompt {
+//     // text-color: @fg2;
+// }
 
 entry {
     placeholder:        "Search";
-    placeholder-color:  @fg3;
+    // placeholder-color:  @fg3;
 }
 
 message {
     margin:             12px 0 0;
     border-radius:      16px;
-    border-color:       @bg2;
-    background-color:   @bg2;
+    // border-color:       @bg2;
+    // background-color:   @bg2;
 }
 
 textbox {
@@ -73,23 +73,23 @@ element {
     border-radius:  16px;
 }
 
-element normal active {
-    text-color: @bg3;
-}
+// element normal active {
+//     text-color: @bg3;
+// }
 
-element alternate active {
-    text-color: @bg3;
-}
+// element alternate active {
+//     text-color: @bg3;
+// }
 
-element selected normal, element selected active {
-    background-color:   @bg3;
-}
+// element selected normal, element selected active {
+//     background-color:   @bg3;
+// }
 
 element-icon {
     size:           1em;
     vertical-align: 0.5;
 }
 
-element-text {
-    text-color: inherit;
-}
+// element-text {
+//     text-color: inherit;
+// }

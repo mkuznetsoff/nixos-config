@@ -4,6 +4,8 @@
     enable = true;
     multimediaKeys = true;
   };
+  
+  services.playerctld.enable = true;
 
 
 }

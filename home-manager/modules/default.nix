@@ -18,11 +18,12 @@
     ./mpdris.nix
     ./gtk.nix
     ./mako.nix
-    #./tofi.nix
+    ./tofi.nix
     ./hyprland.nix
     ./hyprpanel.nix
 #    ./anyrun.nix
     ./wofi.nix
     ./foot.nix
+    ./rofi/rofi.nix
   ];
 }

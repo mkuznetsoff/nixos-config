@@ -15,10 +15,13 @@
     wl-clipboard
     spoofdpi
     nixgl.nixGLIntel
+    unzip
+    imv
+    ventoy-full-gtk
+    # p7zip-rar
 
     #apps
     anydesk
-    audacity
     inputs.nix-photogimp.packages.${pkgs.system}.default
     libreoffice-qt6
     qbittorrent
@@ -26,6 +29,9 @@
     calibre
     unstable.spotify
     zathura
+    nautilus
+    reaper
+    bottles
 
     #fonts
 #    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
@@ -40,9 +46,9 @@
     noto-fonts-cjk-serif
     corefonts
 
-    #wine
-    wineWowPackages.stable
-    winetricks
-#    wineWowPackages.waylandFull
+    ##wine
+    #wineWowPackages.stable
+    #winetricks
+##    wineWowPackages.waylandFull
   ];
 }

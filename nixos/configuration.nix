@@ -24,6 +24,8 @@
     enable = true;
     enable32Bit = true;
   };
+
+  environment.systemPackages = [ pkgs.home-manager ];
     
   system = {
     stateVersion = "25.05"; # Did you read the comment?

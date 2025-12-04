@@ -13,25 +13,20 @@
     wget
     cmake
     wl-clipboard
-    spoofdpi
-    nixgl.nixGLIntel
     unzip
     imv
-    ventoy-full-gtk
     # p7zip-rar
 
     #apps
-    anydesk
     inputs.nix-photogimp.packages.${pkgs.system}.default
+    inputs.zen-browser.packages.${pkgs.system}.default
+    inputs.hyprpanel.packages.${pkgs.system}.default
     libreoffice-qt6
     qbittorrent
     unstable.telegram-desktop
     calibre
-    unstable.spotify
     zathura
     nautilus
-    reaper
-    bottles
 
     #fonts
 #    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })

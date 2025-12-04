@@ -12,7 +12,7 @@
     ./stylix/stylix.nix
     ./pkgs.nix
     ./kitty.nix
-    ./gaming.nix
+#    ./gaming.nix
     ./mpd.nix
     ./ncmpcpp.nix
     ./mpdris.nix
@@ -21,7 +21,6 @@
     ./tofi.nix
     ./hyprland.nix
     ./hyprpanel.nix
-#    ./anyrun.nix
     ./wofi.nix
     ./foot.nix
     ./rofi/rofi.nix

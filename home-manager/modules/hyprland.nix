@@ -48,7 +48,11 @@
 
       "$mainMod" = "SUPER";
 
-      monitor = ",preferred,auto,1";
+      monitor = [ 
+        "eDP-1,1920x1080@60,0x0,1"
+        # (1920 - 2560) /2 = -320
+        "HDMI-A-2, 2560x1080@60, -320x-1080,1"
+      ];
 
       env = [
 

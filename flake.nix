@@ -13,7 +13,6 @@
 	    inputs.nixpkgs.follows = "nixpkgs";
     };
     polymc.url = "github:PolyMC/PolyMC";
-    nixgl.url = "github:nix-community/nixGL";
     hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:danth/stylix/release-25.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -22,14 +21,17 @@
       url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    anyrun.url = "github:fufexan/anyrun/launch-prefix";
     nix-photogimp = {
       url = "github:Libadoxon/nix-photo-gimp";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, nixgl, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, ... } @ inputs:
   
   let
     
@@ -61,7 +63,6 @@
         pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
-          overlays = [ nixgl.overlay ];
         };      
 
         extraSpecialArgs = {

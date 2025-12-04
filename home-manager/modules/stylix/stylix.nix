@@ -10,25 +10,27 @@
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 
     base16Scheme = {
-      base00 = "#1e1e2e"; # base
-      base01 = "#181825"; # mantle
-      base02 = "#313244"; # surface0
-      base03 = "#45475a"; # surface1
-      base04 = "#585b70"; # surface2
-      base05 = "#cdd6f4"; # text
-      base06 = "#f5e0dc"; # rosewater
-      base07 = "#b4befe"; # lavender
-      base08 = "#f38ba8"; # red
-      base09 = "#fab387"; # peach
-      base0A = "#f9e2af"; # yellow
-      base0B = "#a6e3a1"; # green
-      base0C = "#94e2d5"; # teal
-      base0D = "#89b4fa"; # blue
-      base0E = "#cba6f7"; # mauve
-      base0F = "#f2cdcd"; # flamingo
+      base00 = "#FCFBF9"; # Background
+      base01 = "#F7F3EE"; # BackgroundAlt
+      base02 = "#ECEBE8"; # Grey1
+      base03 = "#9E9A95"; # Comment
+      base04 = "#5A544C"; # ForegroundAlt
+      base05 = "#605A52"; # Foreground
+      base06 = "#DDDBD8"; # Grey2
+      base07 = "#CDCBC7"; # Grey3
+
+      base08 = "#8F5652"; # Red
+      base09 = "#886A44"; # Orange
+      base0A = "#AA5087"; # Berry (accent)
+      base0B = "#747B4D"; # Green
+      base0C = "#477A7B"; # Teal
+      base0D = "#556995"; # Blue
+      base0E = "#83577D"; # Purple
+      base0F = "#947956"; # Orange9 (deep/brown)
     };
 
-    image = ./dsotm.png;
+
+    image = ./wall.jpg;
 
     cursor = {
       package = pkgs.apple-cursor;
@@ -40,7 +42,7 @@
 
       monospace = {
         package = pkgs.nerd-fonts.iosevka;
-        name = "Iosevka NF Medium";
+        name = "Iosevka NF";
       };
       
       emoji = {
@@ -60,8 +62,8 @@
       
       sizes = {
         terminal = 14;
-        applications = 12;
-        popups = 12;
+        applications = 11;
+        popups = 11;
       };
     };
 

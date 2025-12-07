@@ -17,7 +17,7 @@
     ./ncmpcpp.nix
     ./mpdris.nix
     ./gtk.nix
-    ./mako.nix
+#    ./mako.nix
     ./tofi.nix
     ./hyprland.nix
     ./hyprpanel.nix

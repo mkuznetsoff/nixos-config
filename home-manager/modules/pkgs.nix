@@ -33,7 +33,6 @@
     newcomputermodern
     iosevka
     noto-fonts
-    noto-fonts-extra   
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
     corefonts

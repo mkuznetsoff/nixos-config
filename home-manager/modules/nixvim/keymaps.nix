@@ -1,7 +1,7 @@
 { ... }: {
 
   programs.nixvim = {
-  
+
     globals = {
       mapleader = " ";
       maplocalleader = " ";
@@ -9,7 +9,7 @@
 
     # Keymaps
     keymaps =
-    [
+      [
       # Буферы
       {
         action = ":Telescope buffers<CR>";
@@ -30,7 +30,7 @@
           desc = "Next buffer";
         };
       }
-      
+
       {
         action = ":bp<CR>";
         key = "<leader>bp";
@@ -40,7 +40,7 @@
           desc = "Previous buffer";
         };
       }
-      
+
       {
         action = ":bd<CR>";
         key = "<leader>bd";
@@ -50,7 +50,7 @@
           desc = "Delete buffer";
         };
       }
-      
+
       # Окна
       {
         action = ":split<CR>";
@@ -61,7 +61,7 @@
           desc = "Split window horizontally";
         };
       }
-      
+
       {
         action = ":vsplit<CR>";
         key = "<leader>wv";
@@ -71,7 +71,7 @@
           desc = "Split window vertically";
         };
       }
-      
+
       {
         action = "<C-w>h";
         key = "<leader>wh";
@@ -81,7 +81,7 @@
           desc = "Move to left window";
         };
       }
-      
+
       {
         action = "<C-w>l";
         key = "<leader>wl";
@@ -91,7 +91,7 @@
           desc = "Move to right window";
         };
       }
-      
+
       {
         action = "<C-w>j";
         key = "<leader>wj";
@@ -101,7 +101,7 @@
           desc = "Move to lower window";
         };
       }
-      
+
       {
         action = "<C-w>k";
         key = "<leader>wk";
@@ -111,7 +111,7 @@
           desc = "Move to upper window";
         };
       }
-      
+
       {
         action = "<C-w>w";
         key = "<leader>ww";
@@ -121,7 +121,7 @@
           desc = "Move to next window";
         };
       }
-      
+
       {
         action = ":close<CR>";
         key = "<leader>wc";
@@ -131,7 +131,7 @@
           desc = "Close current window";
         };
       }
-      
+
       {
         action = ":only<CR>";
         key = "<leader>wo";
@@ -141,9 +141,9 @@
           desc = "Close all other windows";
         };
       }
-      
+
       # Terminal 
-      
+
       {
         action = ":ToggleTerm direction=horizontal<CR>";
         key = "<leader>oh";
@@ -153,7 +153,7 @@
           desc = "Toggle horizontal terminal";
         };
       }
-      
+
       {
         action = ":ToggleTerm direction=vertical size=64<CR>";
         key = "<leader>ot";
@@ -163,7 +163,7 @@
           desc = "Toggle vertical terminal";
         };
       }
-      
+
       {
         action = ":ToggleTerm direction=tab <CR>";
         key = "<leader>oT";
@@ -173,7 +173,7 @@
           desc = "Toggle tab terminal";
         };
       }
-      
+
       # Файлы и поиск
       {
         action = ":Telescope find_files<CR>";
@@ -184,7 +184,7 @@
           desc = "Search files";
         };
       }
-      
+
       {
         action = ":Telescope frecency<CR>";
         key = "<leader>fr";
@@ -194,7 +194,7 @@
           desc = "Recent files";
         };
       }
-      
+
       {
         action = ":Telescope file_browser<CR>";
         key = "<leader>fb";
@@ -202,6 +202,48 @@
           silent = true;
           noremap = true;
           desc = "File browser";
+        };
+      }
+
+      {
+        mode = "v";  
+        key = "<leader>rj";
+        action = ":lua RunJavaBlock()<CR>";
+        options = {
+          noremap = true;
+          silent = true;
+          desc = "Run Java block in current folder using ToggleTerm";
+        };
+      }
+      # neo-tree
+      {
+        mode = "n";
+        key = "<leader>nt";
+        action = ":Neotree toggle filesystem left<CR>";
+        options = {
+          noremap = true;
+          silent = true;
+          desc = "Toggle neo-tree (filesystem)";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>nb";
+        action = ":Neotree toggle buffers left<CR>";
+        options = {
+          noremap = true;
+          silent = true;
+          desc = "Toggle neo-tree (buffers)";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>ng";
+        action = ":Neotree toggle git_status left<CR>";
+        options = {
+          noremap = true;
+          silent = true;
+          desc = "Toggle neo-tree (git)";
         };
       }
     ];

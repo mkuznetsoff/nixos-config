@@ -29,10 +29,7 @@
     nautilus
 
     #fonts
-#    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
-    powerline-fonts
-    powerline-symbols
-    font-awesome
+    nerd-fonts.symbols-only
     newcomputermodern
     iosevka
     noto-fonts
@@ -41,9 +38,5 @@
     noto-fonts-cjk-serif
     corefonts
 
-    ##wine
-    #wineWowPackages.stable
-    #winetricks
-##    wineWowPackages.waylandFull
   ];
 }

@@ -13,5 +13,6 @@
     ./nixd.nix
     # ./stylix/stylix.nix
     ./hyprland.nix
+    ./fonts.nix
   ];
 }

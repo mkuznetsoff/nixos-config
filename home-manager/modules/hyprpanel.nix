@@ -2,7 +2,7 @@
   imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
 
   programs.hyprpanel = {
-    enable = false ;
+    enable = true;
     package = inputs.hyprpanel.packages.${pkgs.system}.default;
 
     settings = {

@@ -6,18 +6,18 @@ networking = {
 
   networkmanager = {
     enable = true;
-    wifi.backend = "iwd";
+    wifi.backend = "wpa_supplicant";
     wifi.powersave = false;
   };
 
-  # wireless.iwd = {
-  #   enable = true;
-  #   settings = {
-  #     Settings = {
-  #       AutoConnect = true;
-  #     };
-  #   };
-  # };
+   wireless.iwd = {
+     enable = false;
+     settings = {
+       Settings = {
+         AutoConnect = true;
+       };
+     };
+   };
 };
 }
 

@@ -125,7 +125,7 @@
       };
 
        decoration = {
-         rounding = 20;
+         rounding = 10;
          shadow = {
            enabled = true;
            range = 20;
@@ -220,7 +220,7 @@
         "$mainMod, Q,      killactive,"
         "$mainMod  Shift,  Q, exit,"
         "$mainMod, F,      togglefloating,"
-        "$mainMod, D,      exec, wofi --show=drun"
+        "$mainMod, D,      exec, rofi -show drun"
         "$mainMod, P,      pseudo, # dwindle"
         "$mainMod, I,      togglesplit, # dwindle"
         "$mainMod, P,      pin, # dwindle"

@@ -12,6 +12,7 @@
     ./cups.nix
     ./nixd.nix
     # ./stylix/stylix.nix
+    ./openconnect.nix
     ./hyprland.nix
     ./fonts.nix
   ];

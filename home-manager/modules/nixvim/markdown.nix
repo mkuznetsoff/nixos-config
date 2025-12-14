@@ -1,4 +1,9 @@
+{ pkgs, ...} :
 {
+  home.packages = with pkgs; [
+    ripgrep # for obsidian
+  ];
+
   programs.nixvim = {
     plugins = {
       render-markdown = {
@@ -46,8 +51,11 @@
               path = "~/Notes";
             }
           ];
+          legacy_commands = false;
+
         };
       };
+
       markdown-preview = {
         enable = true;
         settings = {

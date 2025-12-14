@@ -67,6 +67,8 @@
       };
     };
 
+    targets.qt.platform = "qtct";
+
     #    opacity.terminal = 0.8;
 
     autoEnable = true;

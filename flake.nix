@@ -44,7 +44,7 @@
     nixosConfigurations = {
       "${hostname}" = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs outputs;
+          inherit inputs outputs hostname user system;
           unstable = import nixpkgs-unstable {
             inherit system;
             config.allowUnfree = true;

@@ -18,7 +18,6 @@
     # p7zip-rar
 
     #apps
-    inputs.nix-photogimp.packages.${pkgs.system}.default
     inputs.zen-browser.packages.${pkgs.system}.default
     inputs.hyprpanel.packages.${pkgs.system}.default
     libreoffice-qt6
@@ -27,6 +26,11 @@
     calibre
     zathura
     nautilus
+    # lazarus
+    lazarus-qt6
+    remmina
+
+
 
     #fonts
     nerd-fonts.symbols-only

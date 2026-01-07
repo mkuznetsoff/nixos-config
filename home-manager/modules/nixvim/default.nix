@@ -15,6 +15,8 @@
     ./nvim-tree.nix
     ./markdown.nix
     ./guess-indent.nix
+    ./vimwiki.nix
+    ./treesitter.nix
   ];
 
   programs.nixvim = {

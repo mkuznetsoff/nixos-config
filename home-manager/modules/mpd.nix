@@ -1,9 +1,9 @@
-{ pkgs, inputs, ...}: {
+{ pkgs, ...}: {
 
   home.packages = with pkgs; [
     mpc
   ];
-
+  
   services.mpd = {
     enable = true;
     musicDirectory = "/home/mk/Music";
@@ -21,7 +21,7 @@
         name            "pipewire"
       }
     ''; 
-      network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
+     # network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
   };
 
 }

@@ -9,19 +9,20 @@
   # };
 
   
- nixpkgs.overlays = [ inputs.polymc.overlay ];
+nixpkgs.overlays = [ inputs.polymc.overlay ];
   
   nixpkgs.config.allowUnfree = true;
 
-   # home.sessionVariables = {
-   #   STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
-   # };
+   home.sessionVariables = {
+     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+   };
   
   home.packages = with pkgs; [
-   polymc
+   # polymc
    gamemode
    dxvk
    steam-run
+   steam
    # protonup-ng
   ];
 }

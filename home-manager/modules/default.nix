@@ -12,7 +12,7 @@
     ./stylix/stylix.nix
     ./pkgs.nix
     ./kitty.nix
-#    ./gaming.nix
+    ./gaming.nix
     ./mpd.nix
     ./ncmpcpp.nix
     ./mpdris.nix

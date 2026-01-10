@@ -5,7 +5,6 @@
     qt6.qtwayland
     libsForQt5.qt5ct
     qt6Packages.qt6ct
-    swww
     wl-clipboard
     wlsunset
     hyprshot
@@ -80,9 +79,6 @@
       ];
 
       exec-once = [
-        "swww init"
-        "swww img ${config.stylix.image}"
-        "hyprpanel"
         "wlsunset -l 56.95 -L 53.206 -t 5000"
         "wl-paste --watch cliphist store"
       ];

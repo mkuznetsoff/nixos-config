@@ -4,8 +4,7 @@
 
     enable = true;
     targets.waybar.enable = false;
-    targets.kde.enable = false;
-    targets.yazi.enable = false;
+#    targets.yazi.enable = false;
 
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 
@@ -16,8 +15,8 @@
       base03 = "#9E9A95"; # Comment
       base04 = "#5A544C"; # ForegroundAlt
       base05 = "#605A52"; # Foreground
-      base06 = "#DDDBD8"; # Grey2
-      base07 = "#CDCBC7"; # Grey3
+      base06 = "#7F7A73"; # Grey2
+      base07 = "#706A63"; # Grey3
 
       base08 = "#8F5652"; # Red
       base09 = "#886A44"; # Orange

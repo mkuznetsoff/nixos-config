@@ -27,16 +27,13 @@
 
       theme.font.name = "SF Pro Display";
       theme.font.size = "14px";
-      theme.bar.transparent = true;
 
-      bar.launcher.autoDetectIcon = true;
+      bar.launcher.icon = "";
       bar.clock.format = "%I:%M %p";
         # bar.workspaces.numbered_active_indicator = "color";
         # bar.workspaces.show_icons = true;
         bar.bluetooth.label = false;
         bar.battery.hideLabelWhenFull = true;
-
-
         menus.dashboard.powermenu.confirmation = false;
         menus.dashboard.shortcuts.left.shortcut1.icon = "󰖔";
         menus.dashboard.shortcuts.left.shortcut1.command = "night-shift";

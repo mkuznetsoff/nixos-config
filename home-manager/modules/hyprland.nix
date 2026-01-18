@@ -12,7 +12,6 @@
     hyprland-qt-support
     hyprpolkitagent
     playerctl
-    mako
     pamixer
     playerctl
     mpdris2
@@ -46,10 +45,9 @@
 
       "$mainMod" = "SUPER";
 
-      monitor = [ 
+      monitor = [
         "eDP-1,1920x1080@60,0x0,1"
-        # (1920 - 2560) /2 = -320
-        "HDMI-A-2, 2560x1080@60, -320x-1080,1"
+        "HDMI-A-2,2560x1440@120,-320x-1440,1"
       ];
 
       env = [
@@ -81,6 +79,7 @@
       exec-once = [
         "wlsunset -l 56.95 -L 53.206 -t 5000"
         "wl-paste --watch cliphist store"
+        "hyprpanel"
       ];
 
 
@@ -291,7 +290,7 @@
       	" , PRINT, exec, hyprshot -z -o ~/Pictures/Screenshots/ -m region "
 
         # Clipboard history manager with cliphist
-      	'' $mainMod, V, exec, cliphist list | wofi --dmenu --pre-display-cmd "echo '%s' | cut -f 2" | cliphist decode | wl-copy ''
+      	'' $mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy''
 
       ];
 

@@ -29,7 +29,7 @@
     };
 
 
-    image = ./wall.jpg;
+    image = ./ventura.jpg;
 
     cursor = {
       package = pkgs.apple-cursor;

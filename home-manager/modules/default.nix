@@ -20,5 +20,7 @@
     ./hyprpaper.nix
     ./foot.nix
     ./rofi/rofi.nix
+    ./vicinae.nix
+    ./noctalia.nix
   ];
 }

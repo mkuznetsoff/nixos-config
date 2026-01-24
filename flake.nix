@@ -13,7 +13,16 @@
 	    inputs.nixpkgs.follows = "nixpkgs";
     };
     polymc.url = "github:PolyMC/PolyMC";
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland = {
+      type = "git";
+      url = "https://github.com/hyprwm/Hyprland";
+      submodules = true;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    Hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
+    };
     stylix.url = "github:danth/stylix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
@@ -21,17 +30,24 @@
       url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nix-photogimp = {
-    #   url = "github:Libadoxon/nix-photo-gimp";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    awww.url = "git+https://codeberg.org/LGFae/awww";
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    vicinae-extensions = {
+      url = "github:vicinaehq/extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    vicinae.url = "github:vicinaehq/vicinae";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, vicinae, ... } @ inputs:
   
   let
     
@@ -76,6 +92,7 @@
           ./home-manager/home.nix
           inputs.nixvim.homeManagerModules.nixvim
           inputs.stylix.homeManagerModules.stylix
+          vicinae.homeManagerModules.default
         ];
       };
     };

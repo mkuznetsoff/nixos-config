@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }: {
+{ pkgs, config, lib, inputs, ... }: {
 
   home.packages = with pkgs; [
     qt5.qtwayland
@@ -34,6 +34,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+    plugins = [
+      inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
+    ];
     systemd = {
       enable = false;
       variables = [
@@ -46,8 +49,8 @@
       "$mainMod" = "SUPER";
 
       monitor = [
-        "eDP-1,1920x1080@60,0x0,1"
         "HDMI-A-2,2560x1440@120,-320x-1440,1"
+        "eDP-1,1920x1080@60,0x0,1"
       ];
 
       env = [
@@ -77,8 +80,12 @@
       ];
 
       exec-once = [
+        "foot -server"
+        "vicinae server"
         "wlsunset -l 56.95 -L 53.206 -t 5000"
         "wl-paste --watch cliphist store"
+        "awww-daemon"
+        "awww img ${config.stylix.image}"
         "hyprpanel"
       ];
 
@@ -168,7 +175,6 @@
       dwindle = {
         pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
         preserve_split = true; # you probably want this
-
       };
 
       master = {
@@ -198,23 +204,13 @@
       #   "float, ^(imv)$"
       #   "float, ^(mpv)$"
       # ];
-      workspace = [
-        "w[tv1], gapsout:0, gapsin:0"
-        "f[1], gapsout:0, gapsin:0"
-      ];
-      windowrulev2 = [
-        "bordersize 0, floating:0, onworkspace:w[tv1]"
-        "rounding 0, floating:0, onworkspace:w[tv1]"
-        "bordersize 0, floating:0, onworkspace:f[1]"
-        "rounding 0, floating:0, onworkspace:f[1]"
-      ];
 
       bind = [
         "$mainMod, Return, exec, footclient"
         "$mainMod, Q,      killactive,"
         "$mainMod  Shift,  Q, exit,"
         "$mainMod, F,      togglefloating,"
-        "$mainMod, D,      exec, rofi -show drun"
+        "$mainMod, D,      exec, vicinae toggle"
         "$mainMod, P,      pseudo, # dwindle"
         "$mainMod, I,      togglesplit, # dwindle"
         "$mainMod, P,      pin, # dwindle"

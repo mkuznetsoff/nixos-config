@@ -15,6 +15,7 @@
     wl-clipboard
     unzip
     imv
+    inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
     # p7zip-rar
 
     #apps

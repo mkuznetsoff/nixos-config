@@ -1,9 +1,7 @@
 { pkgs, config, lib, inputs, ... }: {
 
   home.packages = with pkgs; [
-    qt5.qtwayland
     qt6.qtwayland
-    libsForQt5.qt5ct
     qt6Packages.qt6ct
     wl-clipboard
     wlsunset
@@ -11,7 +9,6 @@
     hyprpicker
     hyprland-qt-support
     hyprpolkitagent
-    playerctl
     pamixer
     playerctl
     mpdris2
@@ -20,7 +17,7 @@
     gpu-screen-recorder
   ];
 
-    xdg.portal = {
+  xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-hyprland
@@ -43,7 +40,7 @@
         "--all"
       ]; # https://wiki.hyprland.org/Nix/Hyprland-on-Home-Manager/#programs-dont-work-in-systemd-services-but-do-on-the-terminal
     };
-    
+
     settings = {
 
       "$mainMod" = "SUPER";
@@ -67,6 +64,7 @@
         "XDG_SESSION_DESKTOP,Hyprland"
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
         "QT_QPA_PLATFORM=wayland,xcb"
+        "QT_QPA_PLATFORMTHEME,qt6ct"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
         "DISABLE_QT5_COMPAT,0"
@@ -80,13 +78,10 @@
       ];
 
       exec-once = [
-        "foot -server"
-        "vicinae server"
-        "wlsunset -l 56.95 -L 53.206 -t 5000"
-        "wl-paste --watch cliphist store"
+        "foot --server"
+        "noctalia-shell"
         "awww-daemon"
         "awww img ${config.stylix.image}"
-        "hyprpanel"
       ];
 
 
@@ -102,7 +97,7 @@
         follow_mouse = 1;
 
         touchpad = {
-           natural_scroll = false;
+          natural_scroll = false;
         };
 
         repeat_rate = 30;
@@ -122,55 +117,55 @@
         gaps_out = 5;
         border_size = 2;
         layout = "dwindle";
-         "col.active_border" = lib.mkForce "rgba(${config.lib.stylix.colors.base0E}ff)";
-      };
+        "col.active_border" = lib.mkForce "rgba(${config.lib.stylix.colors.base0E}ff)";
+        };
 
-       decoration = {
-         rounding = 10;
-         shadow = {
-           enabled = true;
-           range = 20;
-           render_power = 3;
-         };
+        decoration = {
+        rounding = 10;
+        shadow = {
+        enabled = true;
+        range = 20;
+        render_power = 3;
+        };
           # blur = {
           #   enabled = true;
           #   size = 18;
           # };
-       };
+          };
 
-        animations = {
+          animations = {
           enabled = true;
           bezier = [
-        "linear, 0, 0, 1, 1"
-        "md3_standard, 0.2, 0, 0, 1"
-        "md3_decel, 0.05, 0.7, 0.1, 1"
-        "md3_accel, 0.3, 0, 0.8, 0.15"
-        "overshot, 0.05, 0.9, 0.1, 1.1"
-        "crazyshot, 0.1, 1.5, 0.76, 0.92"
-        "hyprnostretch, 0.05, 0.9, 0.1, 1.0"
-        "menu_decel, 0.1, 1, 0, 1"
-        "menu_accel, 0.38, 0.04, 1, 0.07"
-        "easeInOutCirc, 0.85, 0, 0.15, 1"
-        "easeOutCirc, 0, 0.55, 0.45, 1"
-        "easeOutExpo, 0.16, 1, 0.3, 1"
-        "softAcDecel, 0.26, 0.26, 0.15, 1"
-        "md2, 0.4, 0, 0.2, 1"
-      ];
+          "linear, 0, 0, 1, 1"
+          "md3_standard, 0.2, 0, 0, 1"
+          "md3_decel, 0.05, 0.7, 0.1, 1"
+          "md3_accel, 0.3, 0, 0.8, 0.15"
+          "overshot, 0.05, 0.9, 0.1, 1.1"
+          "crazyshot, 0.1, 1.5, 0.76, 0.92"
+          "hyprnostretch, 0.05, 0.9, 0.1, 1.0"
+          "menu_decel, 0.1, 1, 0, 1"
+          "menu_accel, 0.38, 0.04, 1, 0.07"
+          "easeInOutCirc, 0.85, 0, 0.15, 1"
+          "easeOutCirc, 0, 0.55, 0.45, 1"
+          "easeOutExpo, 0.16, 1, 0.3, 1"
+          "softAcDecel, 0.26, 0.26, 0.15, 1"
+          "md2, 0.4, 0, 0.2, 1"
+          ];
 
-        animation = [
-        "windows, 1, 2.5, md3_decel, popin 60%"
-        "windowsIn, 1, 2.5, md3_decel, popin 60%"
-        "windowsOut, 1, 2.5, md3_accel, popin 60%"
-        "border, 1, 3, default"
-        "fade, 1, 2.5, md3_decel"
-        "layersIn, 1, 2.5, menu_decel, slide"
-        "layersOut, 1, 2.5, menu_accel"
-        "fadeLayersIn, 1, 2.5, menu_decel"
-        "fadeLayersOut, 1, 2.5, menu_accel"
-        "workspaces, 1, 2.5, menu_decel, slide"
-        "specialWorkspace, 1, 2.5, md3_decel, slidevert"
-      ];
-    };
+          animation = [
+          "windows, 1, 2.5, md3_decel, popin 60%"
+          "windowsIn, 1, 2.5, md3_decel, popin 60%"
+          "windowsOut, 1, 2.5, md3_accel, popin 60%"
+          "border, 1, 3, default"
+          "fade, 1, 2.5, md3_decel"
+          "layersIn, 1, 2.5, menu_decel, slide"
+          "layersOut, 1, 2.5, menu_accel"
+          "fadeLayersIn, 1, 2.5, menu_decel"
+          "fadeLayersOut, 1, 2.5, menu_accel"
+          "workspaces, 1, 2.5, menu_decel, slide"
+          "specialWorkspace, 1, 2.5, md3_decel, slidevert"
+        ];
+      };
 
       dwindle = {
         pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
@@ -179,9 +174,9 @@
 
       master = {
       #  no_gaps_when_only = 0;
-        allow_small_split = true;
-        mfact = 0.60;
-      };
+      allow_small_split = true;
+      mfact = 0.60;
+    };
 
 
       # gestures = {
@@ -197,7 +192,11 @@
         animate_mouse_windowdragging = true;
         enable_swallow = true;
 #        render_ahead_of_time = false;
-        disable_hyprland_logo = true;
+disable_hyprland_logo = true;
+      };
+
+      render = {
+        cm_auto_hdr = 0; 
       };
 
       # windowrule = [
@@ -210,7 +209,7 @@
         "$mainMod, Q,      killactive,"
         "$mainMod  Shift,  Q, exit,"
         "$mainMod, F,      togglefloating,"
-        "$mainMod, D,      exec, vicinae toggle"
+        "$mainMod, D,      exec, noctalia-shell ipc call launcher toggle"
         "$mainMod, P,      pseudo, # dwindle"
         "$mainMod, I,      togglesplit, # dwindle"
         "$mainMod, P,      pin, # dwindle"
@@ -272,21 +271,23 @@
         ", XF86AudioMicMute,     exec, pamixer --default-source -t"
         ", XF86AudioPlay,        exec, playerctl play-pause"
         ", XF86AudioPause,       exec, playerctl play-pause"
-        
+
         # Brightness control
         ", XF86MonBrightnessDown, exec, brightnessctl set 5%- "
         ", XF86MonBrightnessUp,   exec, brightnessctl set +5% "
 
-	
-      	# Screenshot a window
-      	" $mainMod SHIFT, PRINT, exec, hyprshot -z -o ~/Pictures/Screenshots/ -m window "
-      	# Screenshot a monitor
-	      " $mainMod, PRINT, exec, hyprshot -z -o ~/Pictures/Screenshots/ -m output "
-      	# Screenshot a region
-      	" , PRINT, exec, hyprshot -z -o ~/Pictures/Screenshots/ -m region "
+
+        # Screenshot a window
+        " $mainMod SHIFT, PRINT, exec, hyprshot -z -o ~/Pictures/Screenshots/ -m window "
+        # Screenshot a monitor
+        " $mainMod, PRINT, exec, hyprshot -z -o ~/Pictures/Screenshots/ -m output "
+        # Screenshot a region
+        " , PRINT, exec, hyprshot -z -o ~/Pictures/Screenshots/ -m region "
 
         # Clipboard history manager with cliphist
-      	'' $mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy''
+          '' $mainMod SHIFT, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy''
+          '' $mainMod, V, exec, noctalia-shell ipc call launcher clipboard''
+
 
       ];
 

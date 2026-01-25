@@ -1,4 +1,4 @@
-{pkgs, inputs, user, ...}: {
+{inputs, user, ...}: {
   imports = [
     inputs.noctalia.homeModules.default
   ];
@@ -168,7 +168,7 @@
         showCalendarEvents = true;
         showCalendarWeather = true;
         analogClockInCalendar = false;
-        firstDayOfWeek = -1;
+        firstDayOfWeek = 1;
         hideWeatherTimezone = false;
         hideWeatherCityName = false;
         };
@@ -471,8 +471,8 @@
               enabled = true;
               forced = false;
               autoSchedule = true;
-              nightTemp = "5000";
-              dayTemp = "6500";
+              nightTemp = 5000;
+              dayTemp = 6500;
               manualSunrise = "06:30";
               manualSunset = "18:30";
             };

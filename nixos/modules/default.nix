@@ -13,5 +13,6 @@
     ./hyprland.nix
     ./fonts.nix
     ./nix.nix
+    ./throne.nix
   ];
 }

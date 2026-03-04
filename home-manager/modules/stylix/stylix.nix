@@ -66,7 +66,7 @@
       };
     };
 
-    targets.qt.platform = "qtct";
+    targets.qt.platform = "adwaita";
 
     #    opacity.terminal = 0.8;
 

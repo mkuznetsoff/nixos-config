@@ -6,10 +6,12 @@
 
     shellAliases = {
       v = "nvim";
+      vim = "nvim";
       se = "sudo nvim";
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-config/";
       nrt = "sudo nixos-rebuild test --flake ~/nixos-config/";
       nrb = "sudo nixos-rebuild boot --flake ~/nixos-config/";
+      l = "ls -lah";
     };
 
     shellInit = ''

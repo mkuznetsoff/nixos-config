@@ -64,10 +64,8 @@
         "XDG_SESSION_DESKTOP,Hyprland"
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
         "QT_QPA_PLATFORM=wayland,xcb"
-        "QT_QPA_PLATFORMTHEME,qt6ct"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
-        "DISABLE_QT5_COMPAT,0"
         "DIRENV_LOG_FORMAT,"
         "WLR_DRM_NO_ATOMIC,1"
         "WLR_BACKEND,vulkan"
@@ -177,15 +175,6 @@
       allow_small_split = true;
       mfact = 0.60;
     };
-
-
-      # gestures = {
-      #   workspace_swipe = true;
-      #   workspace_swipe_fingers = 3;
-      #   workspace_swipe_invert = false;
-      #   workspace_swipe_distance = 200;
-      #   workspace_swipe_forever = true;
-      # };
 
       misc = {
         animate_manual_resizes = true;

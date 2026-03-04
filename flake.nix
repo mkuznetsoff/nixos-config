@@ -35,11 +35,6 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    vicinae-extensions = {
-      url = "github:vicinaehq/extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    vicinae.url = "github:vicinaehq/vicinae";
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -47,7 +42,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, vicinae, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, ... } @ inputs:
   
   let
     
@@ -92,7 +87,6 @@
           ./home-manager/home.nix
           inputs.nixvim.homeManagerModules.nixvim
           inputs.stylix.homeManagerModules.stylix
-          vicinae.homeManagerModules.default
         ];
       };
     };

@@ -15,12 +15,12 @@
     ./ncmpcpp.nix
     ./mpdris.nix
     ./gtk.nix
+    ./qt.nix
     ./hyprland.nix
     ./hyprpanel.nix
     ./hyprpaper.nix
     ./foot.nix
     ./rofi/rofi.nix
-    ./vicinae.nix
     ./noctalia.nix
   ];
 }

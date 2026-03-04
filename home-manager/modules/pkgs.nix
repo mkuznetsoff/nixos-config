@@ -30,6 +30,7 @@
     # lazarus
     lazarus-qt6
     remmina
+    unstable.cisco-packet-tracer
 
 
 

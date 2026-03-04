@@ -3,6 +3,6 @@
     enable = true; 
     tunMode = {
       enable = true;
-    }
+    };
   }; 
 }

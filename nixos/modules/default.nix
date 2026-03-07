@@ -14,5 +14,6 @@
     ./fonts.nix
     ./nix.nix
     ./throne.nix
+    ./gitlab.nix
   ];
 }

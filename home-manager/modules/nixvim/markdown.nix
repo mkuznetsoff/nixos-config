@@ -38,24 +38,24 @@
         };
       };
 
-      # obsidian = {
-      #   enable = true;
-      #   settings = {
-      #     completion = {
-      #       min_chars = 2;
-      #       nvim_cmp = true;
-      #     };
-      #     new_notes_location = "current_dir";
-      #     workspaces = [
-      #       {
-      #         name = "udsu";
-      #         path = "~/Notes";
-      #       }
-      #     ];
-      #     legacy_commands = false;
+      obsidian = {
+        enable = true;
+        settings = {
+          completion = {
+            min_chars = 2;
+            nvim_cmp = true;
+          };
+          new_notes_location = "current_dir";
+          workspaces = [
+            {
+              name = "udsu";
+              path = "~/Notes";
+            }
+          ];
+          legacy_commands = false;
 
-      #   };
-      # };
+        };
+      };
 
       markdown-preview = {
         enable = true;

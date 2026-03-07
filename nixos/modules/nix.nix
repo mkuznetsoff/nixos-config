@@ -1,5 +1,10 @@
 {...}: {
   nix.settings = {
+
+    http-connections = 100;
+    max-substitution-jobs = 100;
+    max-jobs = "auto";
+
     substituters = [
       "https://nix-community.cachix.org"
       "https://vicinae.cachix.org"

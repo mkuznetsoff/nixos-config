@@ -1,15 +1,25 @@
 { pkgs, ... }:
 {
+
+  security.pki.certificates = [
+    "/home/mk/.gitlab-runner/ca.crt" 
+  ];
+
+  virtualisation.docker.enable = true;
+  
   services.gitlab-runner = {
+
     enable = true;
 
     services.laptop-runner = {
-      authenticationTokenConfigFile = "~/.gitlab-runner/token";
-      url = "https://gitlab.pipoduster.ru";
+      registrationConfigFile = "/home/mk/.gitlab-runner/token";
 
-      executor = "shell";
+      executor = "docker";
 
-      tagList = [ "nix" "laptop" ];
+      dockerImage = "alpine:latest"; 
+      dockerVolumes = [ "/var/run/docker.sock:/var/run/docker.sock" ];
+
+      tagList = [ "nix" "laptop" "docker" ];
 
       environmentVariables = {
         NIX_CONFIG = "experimental-features = nix-command flakes";

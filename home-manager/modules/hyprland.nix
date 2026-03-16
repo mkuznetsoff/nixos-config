@@ -31,9 +31,6 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    plugins = [
-      inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
-    ];
     systemd = {
       enable = false;
       variables = [

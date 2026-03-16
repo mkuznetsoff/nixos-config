@@ -22,5 +22,6 @@
     ./foot.nix
     ./rofi/rofi.nix
     ./noctalia.nix
+    ./obsidian.nix
   ];
 }

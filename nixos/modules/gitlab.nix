@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
 
-  security.pki.certificates = [
-    "/home/mk/.gitlab-runner/ca.crt" 
-  ];
+  # security.pki.certificates = [
+  #   "/etc/ssl/certs/gitlab/gitlab.crt"
+  # ];
 
   virtualisation.docker.enable = true;
   
@@ -12,7 +12,7 @@
     enable = true;
 
     services.laptop-runner = {
-      registrationConfigFile = "/home/mk/.gitlab-runner/token";
+      authenticationTokenConfigFile = "/home/mk/.gitlab-runner/token";
 
       executor = "docker";
 

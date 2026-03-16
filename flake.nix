@@ -14,14 +14,7 @@
     };
     polymc.url = "github:PolyMC/PolyMC";
     hyprland = {
-      type = "git";
-      url = "https://github.com/hyprwm/Hyprland";
-      submodules = true;
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    Hyprspace = {
-      url = "github:KZDKM/Hyprspace";
-      inputs.hyprland.follows = "hyprland";
+      url = "github:hyprwm/Hyprland";
     };
     stylix.url = "github:danth/stylix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";

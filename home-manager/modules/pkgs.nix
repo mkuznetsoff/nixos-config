@@ -30,7 +30,6 @@
     # lazarus
     lazarus-qt6
     remmina
-    unstable.cisco-packet-tracer
 
 
 
@@ -43,5 +42,9 @@
     noto-fonts-cjk-serif
     corefonts
 
+  ];
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "ciscoPacketTracer8-8.2.2"
   ];
 }

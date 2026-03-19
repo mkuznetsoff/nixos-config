@@ -1,4 +1,8 @@
-{ pkgs, unstable, inputs, ... }: {
+{ pkgs, unstable, inputs, ... }:
+let
+  koala-clash = import ../pkgs/koala-clash.nix { inherit pkgs; };
+in
+{
   
   nixpkgs.config.allowUnfree = true;
 
@@ -17,6 +21,7 @@
     imv
     inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
     # p7zip-rar
+    wineWow64Packages.waylandFull
 
     #apps
     inputs.zen-browser.packages.${pkgs.system}.default
@@ -30,6 +35,7 @@
     # lazarus
     lazarus-qt6
     remmina
+    koala-clash
 
 
 

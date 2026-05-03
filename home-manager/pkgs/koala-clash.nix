@@ -1,40 +1,60 @@
 { pkgs, ... }:
 
-let
-  koala-clash = pkgs.stdenv.mkDerivation {
-    pname = "koala-clash";
-    version = "0.2.8";
+pkgs.stdenv.mkDerivation {
+  pname = "koala-clash";
+  version = "1.1.0";
 
-    src = pkgs.fetchurl {
-      url = "https://github.com/coolcoala/koala-clash/releases/download/v0.2.8/Koala.Clash_amd64.app.tar.gz";
-      sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
-    };
-
-    nativeBuildInputs = [ pkgs.autoPatchelfHook ];
-
-    buildInputs = with pkgs; [
-      glib
-      gtk3
-      webkitgtk
-      libayatana-appindicator
-      openssl
-    ];
-
-    unpackPhase = ''
-      tar xf $src
-    '';
-
-    installPhase = ''
-      mkdir -p $out/bin
-      cp -r * $out/
-
-      # бинарь обычно внутри
-      chmod +x $out/koala-clash || true
-
-      ln -s $out/koala-clash $out/bin/koala-clash || true
-    '';
+  src = pkgs.fetchurl {
+    url = "https://github.com/coolcoala/koala-clash/releases/download/1.1.0/Koala.Clash_amd64.deb";
+    sha256 = "sha256-N+GOC6XhMH5D1PBpYebKkBgjlRJ050dhj1kOzklNq0I=";
   };
-in
-{
-  home.packages = [ koala-clash ];
+
+  nativeBuildInputs = [
+    pkgs.autoPatchelfHook
+    pkgs.gnutar
+    pkgs.binutils
+  ];
+
+  autoPatchelfIgnoreMissingDeps = [ "libc.musl-x86_64.so.1" ];
+
+  buildInputs = with pkgs; [
+    glib
+    gtk3
+    webkitgtk_4_1
+    libayatana-appindicator
+    openssl
+    mesa
+    libGL
+    libglvnd
+    alsa-lib
+    nss
+    nspr
+    mihomo
+  ];
+
+  unpackPhase = ''
+    ar x $src
+    tar xf data.tar.*
+  '';
+
+  installPhase = ''
+    mkdir -p $out/bin
+    mkdir -p $out/share
+
+    cp -r opt $out/
+    cp -r usr/share/* $out/share/
+
+    chmod +x $out/opt/Koala.Clash/koala-clash
+
+    ln -s $out/opt/Koala.Clash/koala-clash $out/bin/koala-clash
+  '';
+
+  postFixup = ''
+    chmod 4755 $out/opt/Koala.Clash/chrome-sandbox || true
+  '';
+
+  meta = {
+    description = "Koala Clash client";
+    platforms = pkgs.lib.platforms.linux;
+  };
 }

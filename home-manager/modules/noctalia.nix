@@ -200,7 +200,7 @@
       wallpaper = {
         enabled = true;
         overviewEnabled = false;
-        directory = "/home/mk/Pictures/Wallpapers";
+        directory = "/home/mk/nixos-config/home-manager/modules/stylix/";
         monitorDirectories = [ ];
         enableMultiMonitorDirectories = false;
         showHiddenFiles = false;

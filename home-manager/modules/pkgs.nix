@@ -35,7 +35,8 @@ in
     # lazarus
     lazarus-qt6
     remmina
-    koala-clash
+    anydesk
+    gimp
 
 
 

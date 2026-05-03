@@ -75,8 +75,8 @@
       exec-once = [
         "foot --server"
         "noctalia-shell"
-        "awww-daemon"
-        "awww img ${config.stylix.image}"
+        # "awww-daemon"
+        # "awww img ${config.stylix.image}"
       ];
 
 

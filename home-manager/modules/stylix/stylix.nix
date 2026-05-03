@@ -8,6 +8,8 @@
 
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 
+    polarity = "light";
+
     base16Scheme = {
       base00 = "#FCFBF9"; # Background
       base01 = "#F7F3EE"; # BackgroundAlt

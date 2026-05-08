@@ -12,6 +12,10 @@ services.syncthing = {
         path = "~/Notes/";
         devices = [ "server" ];
       };
+      "sync" = {
+        path = "~/Sync/";
+        devices = [ "server" ];
+      };
     };
   };
 };

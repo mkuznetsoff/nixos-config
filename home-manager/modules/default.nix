@@ -23,5 +23,6 @@
     ./rofi/rofi.nix
     ./noctalia.nix
     ./obsidian.nix
+    ./syncthing.nix
   ];
 }
